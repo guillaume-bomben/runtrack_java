@@ -4,10 +4,10 @@ import java.util.Date;
 
 public class Commande {
     private int numeroCommande;
-    private Date dateCommande;
+    private String dateCommande;
     private Client client;
 
-    public Commande(int numeroCommande, Date dateCommande, Client client) {
+    public Commande(int numeroCommande, String dateCommande, Client client) {
         this.numeroCommande = numeroCommande;
         this.dateCommande = dateCommande;
         this.client = client;
@@ -21,11 +21,11 @@ public class Commande {
         this.numeroCommande = numeroCommande;
     }
 
-    public Date getDateCommande() {
+    public String getDateCommande() {
         return dateCommande;
     }
 
-    public void setDateCommande(Date dateCommande) {
+    public void setDateCommande(String dateCommande) {
         this.dateCommande = dateCommande;
     }
 

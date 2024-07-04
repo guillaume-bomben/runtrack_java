@@ -65,7 +65,7 @@ public class Commerciale {
             commerciale.afficherMenu();
             System.out.print("Choisissez une option : ");
             choix = scanner.nextInt();
-            scanner.nextLine();  // Consomme le reste de la ligne
+            scanner.nextLine();  
 
             switch (choix) {
                 case 1:
@@ -77,7 +77,7 @@ public class Commerciale {
                     double prixUnitaire = scanner.nextDouble();
                     System.out.print("Quantité en stock : ");
                     int quantiteStock = scanner.nextInt();
-                    scanner.nextLine();  // Consomme le reste de la ligne
+                    scanner.nextLine();  
 
                     Article article = new Article(reference, designation, prixUnitaire, quantiteStock);
                     commerciale.ajouterArticle(article);
@@ -102,14 +102,14 @@ public class Commerciale {
                 case 3:
                     System.out.print("Identité : ");
                     int identite = scanner.nextInt();
-                    scanner.nextLine();  // Consomme le reste de la ligne
+                    scanner.nextLine();  
                     System.out.print("Nom social : ");
                     String nomSocial = scanner.nextLine();
                     System.out.print("Adresse : ");
                     String adresse = scanner.nextLine();
                     System.out.print("Chiffre d'affaire : ");
                     double chiffreAffaire = scanner.nextDouble();
-                    scanner.nextLine();  // Consomme le reste de la ligne
+                    scanner.nextLine();  
 
                     Client client = new Client(identite, nomSocial, adresse, chiffreAffaire);
                     commerciale.ajouterClient(client);
@@ -117,7 +117,7 @@ public class Commerciale {
                 case 4:
                     System.out.print("Identité du client à supprimer : ");
                     identite = scanner.nextInt();
-                    scanner.nextLine();  // Consomme le reste de la ligne
+                    scanner.nextLine();  
                     Client clientASupprimer = null;
                     for (Client c : commerciale.clients) {
                         if (c.getIdentite() == identite) {
@@ -135,14 +135,13 @@ public class Commerciale {
                 case 5:
                     System.out.print("Numéro de commande : ");
                     int numeroCommande = scanner.nextInt();
-                    scanner.nextLine();  // Consomme le reste de la ligne
+                    scanner.nextLine();  
                     System.out.print("Date de commande (format YYYY-MM-DD) : ");
-                    String dateString = scanner.nextLine();
-                    Date dateCommande = new Date(dateString);
+                    String dateCommande = scanner.nextLine();
 
                     System.out.print("Identité du client : ");
                     identite = scanner.nextInt();
-                    scanner.nextLine();  // Consomme le reste de la ligne
+                    scanner.nextLine();  
                     Client clientCommande = null;
                     for (Client c : commerciale.clients) {
                         if (c.getIdentite() == identite) {
@@ -161,7 +160,7 @@ public class Commerciale {
                 case 6:
                     System.out.print("Numéro de la commande à annuler : ");
                     numeroCommande = scanner.nextInt();
-                    scanner.nextLine();  // Consomme le reste de la ligne
+                    scanner.nextLine();  
                     Commande commandeASupprimer = null;
                     for (Commande c : commerciale.commandes) {
                         if (c.getNumeroCommande() == numeroCommande) {
